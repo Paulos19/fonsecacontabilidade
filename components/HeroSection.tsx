@@ -44,14 +44,14 @@ export function HeroSection() {
 
                         <div className="flex gap-4 items-start">
                             {/* Dark image/logo placeholder matching the car thumbnail */}
-                            <div className="w-20 h-20 md:w-24 md:h-24 bg-[#0a0a0a] border border-white/5 flex items-center justify-center overflow-hidden relative shrink-0">
-                                <div className="absolute inset-0 bg-gradient-premium opacity-[0.15]"></div>
+                            {/* Centered logo without background for highlight */}
+                            <div className="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center relative shrink-0">
                                 <Image
                                     src="/logo/PNG.png"
                                     alt="FC Icon"
-                                    width={50}
-                                    height={25}
-                                    className="object-contain opacity-70 z-10"
+                                    width={90}
+                                    height={45}
+                                    className="object-contain opacity-100 z-10 drop-shadow-2xl"
                                 />
                             </div>
 

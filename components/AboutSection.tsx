@@ -53,7 +53,7 @@ export function AboutSection() {
             <div className="max-w-7xl mx-auto w-full mt-24 lg:mt-32 px-6 lg:px-10 relative flex flex-col">
 
                 {/* The solid center vertical bar (Hidden on mobile) */}
-                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-20 bg-emerald-400 items-center justify-center z-10 shadow-[0_0_30px_rgba(52,211,153,0.15)]">
+                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-20 bg-[#37A674] items-center justify-center z-10 shadow-[0_0_30px_rgba(55,166,116,0.15)]">
                     <span className="text-black font-semibold text-xl tracking-[0.25em] uppercase -rotate-90 whitespace-nowrap">
                         VANTAGENS
                     </span>
@@ -66,7 +66,7 @@ export function AboutSection() {
 
                             {/* Left Side: Number */}
                             <div className="lg:w-1/2 flex items-end justify-start lg:justify-end lg:pr-24 pb-4 pt-10 lg:pt-16">
-                                <span className="text-8xl lg:text-[9rem] font-light leading-[0.8] tracking-tighter text-white/95 group-hover:text-emerald-400 transition-colors duration-500">
+                                <span className="text-8xl lg:text-[9rem] font-light leading-[0.8] tracking-tighter text-white/95 group-hover:text-[#37A674] transition-colors duration-500">
                                     {stat.num}
                                 </span>
                                 {/* Mobile Description */}

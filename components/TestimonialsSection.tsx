@@ -79,7 +79,7 @@ export function TestimonialsSection() {
                     className="flex flex-col items-center justify-center max-w-3xl mx-auto text-center mb-16"
                 >
                     <div className="flex justify-center mb-6">
-                        <div className="border border-white/20 bg-white/[0.02] py-2 px-6 rounded-full text-xs uppercase tracking-[0.2em] font-semibold text-emerald-400">
+                        <div className="border border-white/20 bg-white/[0.02] py-2 px-6 rounded-full text-xs uppercase tracking-[0.2em] font-semibold text-[#37A674]">
                             Prova Social
                         </div>
                     </div>

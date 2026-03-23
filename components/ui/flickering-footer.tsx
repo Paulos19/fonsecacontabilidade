@@ -97,7 +97,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     squareSize = 3,
     gridGap = 3,
     flickerChance = 0.2,
-    color = "#00ffaa",
+    color = "#37A674",
     width,
     height,
     className,
@@ -325,7 +325,7 @@ export const Footer = () => {
                         <Image src="/logo/PNG.png" alt="Fonseca Contabilidade Logo" width={50} height={50} className="w-[50px] opacity-90" />
                         <div className="flex flex-col">
                             <p className="text-xl font-bold tracking-tight text-white uppercase">Fonseca</p>
-                            <p className="text-xs tracking-[0.2em] font-medium text-emerald-400 -mt-1 uppercase">Contabilidade</p>
+                            <p className="text-xs tracking-[0.2em] font-medium text-[#37A674] -mt-1 uppercase">Contabilidade</p>
                         </div>
                     </Link>
                     <p className="tracking-wide leading-relaxed text-white/50 text-sm font-light">
@@ -337,7 +337,7 @@ export const Footer = () => {
                     <div className="flex flex-col items-start justify-start md:flex-row md:items-start md:justify-between gap-y-10 lg:pl-10">
                         {siteConfig.footerLinks.map((column, columnIndex) => (
                             <ul key={columnIndex} className="flex flex-col gap-y-4">
-                                <li className="mb-2 text-xs tracking-widest font-semibold uppercase text-emerald-400">
+                                <li className="mb-2 text-xs tracking-widest font-semibold uppercase text-[#37A674]">
                                     {column.title}
                                 </li>
                                 {column.links.map((link) => (
@@ -347,7 +347,7 @@ export const Footer = () => {
                                     >
                                         <Link href={link.url}>{link.title}</Link>
                                         <div className="flex size-4 items-center justify-center translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                                            <ChevronRight className="h-4 w-4 text-emerald-400" />
+                                            <ChevronRight className="h-4 w-4 text-[#37A674]" />
                                         </div>
                                     </li>
                                 ))}
@@ -366,7 +366,7 @@ export const Footer = () => {
                         className="h-full w-full opacity-80"
                         squareSize={3}
                         gridGap={tablet ? 2 : 3}
-                        color="#00ffaa"
+                        color="#37A674"
                         maxOpacity={0.25}
                         flickerChance={0.15}
                     />

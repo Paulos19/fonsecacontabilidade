@@ -22,6 +22,11 @@
 }
 
 :root {
+  --verde-fonseca: #37A674;
+  --verde-escuro: #2A7F59;
+  --branco-puro: #FFFFFF;
+  --preto-detalhes: #000000;
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
@@ -36,12 +41,12 @@
 .dark {
   --background: #030712; /* Very dark blue/black */
   --foreground: #f8fafc; /* Slate 50 */
-  --primary: #00ffaa; /* Neon green indicator */
+  --primary: #37A674; /* Verde Fonseca */
   --primary-foreground: #020617; /* Slate 950 */
   --accent: #1e293b; /* Slate 800 */
   --accent-foreground: #f8fafc;
   --border: rgba(255, 255, 255, 0.1);
-  --ring: #00ffaa;
+  --ring: #37A674;
   --radius: 0.625rem;
 }
 
@@ -59,10 +64,10 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#37A674] via-[#2A7F59] to-[#37A674];
   }
   .bg-gradient-premium {
-    @apply bg-gradient-to-br from-[#00ffaa] via-[#00d0ff] to-[#006aff];
+    @apply bg-gradient-to-br from-[#37A674] via-[#2A7F59] to-[#000000];
   }
   .noise-overlay {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");

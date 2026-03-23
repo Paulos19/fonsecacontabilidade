@@ -4,36 +4,36 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 interface AnimatedShaderBackgroundProps {
-    children?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const AnimatedShaderBackground = ({ children }: AnimatedShaderBackgroundProps) => {
-    const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-        const scene = new THREE.Scene();
-        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-        // Set initial size based on container
-        const rect = container.getBoundingClientRect();
-        renderer.setSize(rect.width, rect.height);
-        container.appendChild(renderer.domElement);
+    // Set initial size based on container
+    const rect = container.getBoundingClientRect();
+    renderer.setSize(rect.width, rect.height);
+    container.appendChild(renderer.domElement);
 
-        const material = new THREE.ShaderMaterial({
-            uniforms: {
-                iTime: { value: 0 },
-                iResolution: { value: new THREE.Vector2(rect.width, rect.height) }
-            },
-            vertexShader: `
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        iTime: { value: 0 },
+        iResolution: { value: new THREE.Vector2(rect.width, rect.height) }
+      },
+      vertexShader: `
         void main() {
           gl_Position = vec4(position, 1.0);
         }
       `,
-            fragmentShader: `
+      fragmentShader: `
         uniform float iTime;
         uniform vec2 iResolution;
 
@@ -80,11 +80,11 @@ const AnimatedShaderBackground = ({ children }: AnimatedShaderBackgroundProps) =
             v = p + cos(i * i + (iTime + p.x * 0.08) * 0.025 + i * vec2(13.0, 11.0)) * 3.5 + vec2(sin(iTime * 3.0 + i) * 0.003, cos(iTime * 3.5 - i) * 0.003);
             float tailNoise = fbm(v + vec2(iTime * 0.5, i)) * 0.3 * (1.0 - (i / 35.0));
             
-            // Replaced the blue/purple base with a neo-green base (#00ffaa proximity)
+            // Replaced the neon green base with a verde-fonseca base (#37A674 appx)
             vec4 auroraColors = vec4(
-              0.0,
-              0.6 + 0.4 * cos(i * 0.3 + iTime * 0.5),
-              0.3 + 0.3 * sin(i * 0.4 + iTime * 0.3),
+              0.2 + 0.1 * sin(i * 0.2 + iTime * 0.4),
+              0.65 + 0.1 * cos(i * 0.3 + iTime * 0.5),
+              0.45 + 0.1 * sin(i * 0.4 + iTime * 0.3),
               1.0
             );
             
@@ -97,47 +97,47 @@ const AnimatedShaderBackground = ({ children }: AnimatedShaderBackgroundProps) =
           gl_FragColor = o * 1.5;
         }
       `
-        });
+    });
 
-        const geometry = new THREE.PlaneGeometry(2, 2);
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
 
-        let frameId: number;
-        const animate = () => {
-            material.uniforms.iTime.value += 0.016;
-            renderer.render(scene, camera);
-            frameId = requestAnimationFrame(animate);
-        };
-        animate();
+    let frameId: number;
+    const animate = () => {
+      material.uniforms.iTime.value += 0.016;
+      renderer.render(scene, camera);
+      frameId = requestAnimationFrame(animate);
+    };
+    animate();
 
-        const handleResize = () => {
-            const currentRect = container.getBoundingClientRect();
-            renderer.setSize(currentRect.width, currentRect.height);
-            material.uniforms.iResolution.value.set(currentRect.width, currentRect.height);
-        };
-        window.addEventListener('resize', handleResize);
+    const handleResize = () => {
+      const currentRect = container.getBoundingClientRect();
+      renderer.setSize(currentRect.width, currentRect.height);
+      material.uniforms.iResolution.value.set(currentRect.width, currentRect.height);
+    };
+    window.addEventListener('resize', handleResize);
 
-        return () => {
-            cancelAnimationFrame(frameId);
-            window.removeEventListener('resize', handleResize);
-            if (container && renderer.domElement) {
-                container.removeChild(renderer.domElement);
-            }
-            geometry.dispose();
-            material.dispose();
-            renderer.dispose();
-        };
-    }, []);
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener('resize', handleResize);
+      if (container && renderer.domElement) {
+        container.removeChild(renderer.domElement);
+      }
+      geometry.dispose();
+      material.dispose();
+      renderer.dispose();
+    };
+  }, []);
 
-    return (
-        <div ref={containerRef} className="relative w-full h-full min-h-[60vh] lg:min-h-[80vh] overflow-hidden bg-black flex items-center justify-center">
-            {/* Three.js canvas gets automatically appended inside this container behind the children overlay */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-                {children}
-            </div>
-        </div>
-    );
+  return (
+    <div ref={containerRef} className="relative w-full h-full min-h-[60vh] lg:min-h-[80vh] overflow-hidden bg-black flex items-center justify-center">
+      {/* Three.js canvas gets automatically appended inside this container behind the children overlay */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+        {children}
+      </div>
+    </div>
+  );
 };
 
 export default AnimatedShaderBackground;

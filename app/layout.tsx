@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${outfit.variable} dark antialiased`}>
-      <body className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden selection:bg-teal-500/30">
+      <body className="min-h-screen font-sans bg-background text-foreground overflow-x-hidden selection:bg-[#37A674]/30">
         {children}
       </body>
     </html>

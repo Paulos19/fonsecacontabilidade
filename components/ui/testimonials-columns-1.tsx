@@ -37,7 +37,7 @@ export const TestimonialsColumn = (props: {
                                         />
                                         <div className="flex flex-col">
                                             <div className="font-semibold text-white tracking-tight leading-5">{name}</div>
-                                            <div className="text-[10px] sm:text-xs leading-5 text-emerald-400 tracking-wider uppercase mt-1">{role}</div>
+                                            <div className="text-[10px] sm:text-xs leading-5 text-[#37A674] tracking-wider uppercase mt-1">{role}</div>
                                         </div>
                                     </div>
                                 </div>

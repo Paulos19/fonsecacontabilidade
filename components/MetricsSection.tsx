@@ -26,7 +26,7 @@ export function MetricsSection() {
                         <p className="text-white/60 text-lg lg:text-xl font-light leading-relaxed max-w-lg mb-12">
                             Sistema profissional de gestão orientada a resultados. Construído com rigor contábil e inteligência estratégica. Ferramentas de ponta para alavancar sua empresa.
                         </p>
-                        <button className="bg-emerald-400 hover:bg-emerald-300 text-black font-semibold text-sm tracking-widest uppercase px-8 py-4 transition-colors flex items-center gap-2 group">
+                        <button className="bg-[#37A674] hover:bg-[#2A7F59] text-black font-semibold text-sm tracking-widest uppercase px-8 py-4 transition-colors flex items-center gap-2 group">
                             Falar com Especialista
                             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </button>
@@ -79,7 +79,7 @@ export function MetricsSection() {
                         { num: "500+", label: "Empresas Parceiras", id: "003" },
                     ].map((metric, i) => (
                         <div key={i} className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left px-4 group">
-                            <h3 className="text-5xl lg:text-[4rem] font-light tracking-tight text-white mb-6 leading-none group-hover:text-emerald-400 transition-colors duration-500">
+                            <h3 className="text-5xl lg:text-[4rem] font-light tracking-tight text-white mb-6 leading-none group-hover:text-[#37A674] transition-colors duration-500">
                                 {metric.num}
                             </h3>
                             <div className="flex w-full justify-between items-center border-t border-white/10 pt-4 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40">
