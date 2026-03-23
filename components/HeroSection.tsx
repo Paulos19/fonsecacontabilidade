@@ -27,13 +27,6 @@ export function HeroSection() {
             {/* Main Content Layout */}
             <div className="absolute inset-0 z-20 w-full h-full pointer-events-none px-6 md:px-10 py-8 flex flex-col justify-end md:block">
 
-                {/* HUGE Left Text (Matches "RS5") */}
-                <div className="absolute top-[30%] md:top-[35%] left-[8%] transform -translate-y-1/2">
-                    <h1 className="text-[25vw] md:text-[14vw] font-outfit font-light tracking-tighter leading-none text-white/90 select-none">
-                        F<span className="font-semibold text-white">C</span>
-                    </h1>
-                </div>
-
                 {/* Content Container - Stacks on mobile, absolute on desktop */}
                 <div className="flex flex-col gap-8 md:block pointer-events-none">
 
