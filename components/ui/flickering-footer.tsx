@@ -322,7 +322,7 @@ export const Footer = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between p-10 py-16">
                 <div className="flex flex-col items-start justify-start gap-y-6 max-w-sm mx-0">
                     <Link href="/" className="flex items-center gap-3">
-                        <Image src="/logo/PNG.png" alt="Fonseca Contabilidade Logo" width={50} height={50} className="w-[50px] opacity-90" />
+                        <Image src="/logo/PNG.png" alt="Fonseca Contabilidade Logo" width={50} height={50} className="w-[50px] opacity-90" style={{ width: 'auto', height: 'auto' }} />
                         <div className="flex flex-col">
                             <p className="text-xl font-bold tracking-tight text-white uppercase">Fonseca</p>
                             <p className="text-xs tracking-[0.2em] font-medium text-[#37A674] -mt-1 uppercase">Contabilidade</p>

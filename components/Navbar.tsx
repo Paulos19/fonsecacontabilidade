@@ -15,6 +15,8 @@ export function Navbar() {
                         width={70}
                         height={36}
                         className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        style={{ width: 'auto', height: 'auto' }}
+                        priority
                     />
                 </Link>
             </div>

@@ -1,5 +1,12 @@
-import AnimatedShaderBackground from "@/components/ui/animated-shader-background";
+"use client";
+
+import dynamic from "next/dynamic";
 import { ArrowUpRight } from "lucide-react";
+
+const AnimatedShaderBackground = dynamic(
+    () => import("@/components/ui/animated-shader-background"),
+    { ssr: false }
+);
 
 export function CtaSection() {
     return (

@@ -52,6 +52,8 @@ export function HeroSection() {
                                     width={90}
                                     height={45}
                                     className="object-contain opacity-100 z-10 drop-shadow-2xl"
+                                    style={{ width: 'auto', height: 'auto' }}
+                                    priority
                                 />
                             </div>
 

@@ -41,6 +41,7 @@ export function AboutSection() {
                         src="/vini.png"
                         alt="Vinicius Dias"
                         fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                     />
                     {/* Subtle overlay to tie image into dark theme when not hovered */}
