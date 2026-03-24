@@ -141,7 +141,16 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
                 maskCtx.font = `${fontWeight} ${fontSize}px "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
                 maskCtx.textAlign = "center";
                 maskCtx.textBaseline = "middle";
-                maskCtx.fillText(text, width / (2 * dpr), height / (2 * dpr));
+
+                const lines = text.split(" ");
+                const lineHeight = fontSize * 0.85;
+                const totalHeight = (lines.length - 1) * lineHeight;
+                const centerY = height / (2 * dpr);
+
+                lines.forEach((line, index) => {
+                    const y = centerY - (totalHeight / 2) + (index * lineHeight);
+                    maskCtx.fillText(line, width / (2 * dpr), y);
+                });
                 maskCtx.restore();
             }
 
@@ -361,8 +370,8 @@ export const Footer = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-20% md:from-40%" />
                 <div className="absolute inset-0 mx-4 md:mx-10 overflow-hidden">
                     <FlickeringGrid
-                        text={tablet ? "FONSECA" : "FONSECA CONTABILIDADE"}
-                        fontSize={tablet ? 70 : 130}
+                        text="FONSECA CONTABILIDADE"
+                        fontSize={tablet ? 45 : 120}
                         className="h-full w-full opacity-80"
                         squareSize={3}
                         gridGap={tablet ? 2 : 3}

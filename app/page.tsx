@@ -1,7 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
+import { PainPointsSection } from "@/components/PainPointsSection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { MetricsSection } from "@/components/MetricsSection";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { ProcessSection } from "@/components/ProcessSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { CtaSection } from "@/components/CtaSection";
@@ -13,7 +17,11 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <PainPointsSection />
+      <ServicesSection />
       <MetricsSection />
+      <BenefitsSection />
+      <ProcessSection />
       <TestimonialsSection />
       <ContactSection />
       <CtaSection />
