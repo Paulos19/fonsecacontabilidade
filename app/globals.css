@@ -95,3 +95,15 @@
     transform: translateY(calc(-100% - var(--gap)));
   }
 }
+
+@keyframes grid-movement {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-40px, -40px); }
+}
+
+@layer utilities {
+  .animate-grid-movement {
+    animation: grid-movement 2.5s linear infinite;
+    will-change: transform;
+  }
+}

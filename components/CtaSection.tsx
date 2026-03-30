@@ -30,7 +30,7 @@ export function CtaSection() {
                 </div>
 
                 {/* Subtle noise overlay explicitly for this container */}
-                <div className="absolute inset-0 z-10 pointer-events-none mix-blend-overlay opacity-30 bg-[url('/noise.webp')]"></div>
+                <div className="absolute inset-0 z-10 pointer-events-none mix-blend-overlay opacity-30 noise-overlay"></div>
             </AnimatedShaderBackground>
         </section>
     );

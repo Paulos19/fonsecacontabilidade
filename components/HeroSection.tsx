@@ -20,7 +20,7 @@ export function HeroSection() {
                     className="w-full h-full object-cover"
                 >
                     {/* We assume video.mp4 is available */}
-                    <source src="/video.mp4" type="video/mp4" />
+                    <source src="https://t3gjojcefp.ufs.sh/f/zz8Pp2oohfEPJmrfptauqmNVpEhUa85WDseX3ZwIcvytlA6S" type="video/mp4" />
                 </video>
             </div>
 
