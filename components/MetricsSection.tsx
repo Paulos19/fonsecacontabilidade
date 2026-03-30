@@ -50,12 +50,9 @@ export function MetricsSection() {
                                         {/* Faint full-height background line for texture */}
                                         <div className="absolute inset-y-0 w-[1px] bg-white/[0.03]"></div>
 
-                                        <motion.div
-                                            initial={{ opacity: 0, height: "0%" }}
-                                            whileInView={{ opacity: 1, height: `${peakY}%` }}
-                                            viewport={{ once: true, margin: "-50px" }}
-                                            transition={{ duration: 0.8, delay: i * 0.05, ease: "easeOut" }}
+                                        <div
                                             className="absolute bottom-0 w-[1px] flex flex-col items-center"
+                                            style={{ height: `${peakY}%` }}
                                         >
                                             {/* The line below the diamond */}
                                             <div className="w-[1px] h-full bg-gradient-to-t from-transparent via-white/20 to-white"></div>
@@ -65,7 +62,7 @@ export function MetricsSection() {
 
                                             {/* The line above the diamond */}
                                             <div className="absolute bottom-full w-[1px] h-[80px] lg:h-[120px] bg-gradient-to-b from-white/90 to-transparent"></div>
-                                        </motion.div>
+                                        </div>
 
                                     </div>
                                 )

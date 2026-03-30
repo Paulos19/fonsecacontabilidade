@@ -67,12 +67,8 @@ export function ServicesSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px] bg-white/5 overflow-hidden border border-white/5 rounded-2xl">
                     {services.map((service, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 0.8, delay: index * 0.1 }}
-                            viewport={{ once: true }}
                             className="group relative h-[380px] bg-[#0A0A0A] p-10 flex flex-col justify-between hover:bg-[#37A674]/5 transition-all duration-700"
                         >
                             <div className="flex flex-col gap-6">
@@ -94,7 +90,7 @@ export function ServicesSection() {
 
                             {/* Corner accent */}
                             <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-l-[40px] border-t-white/5 border-l-transparent transition-all group-hover:border-t-[#37A674]/20 duration-700"></div>
-                        </motion.div>
+                        </div>
                     ))}
 
                     {/* Fill the empty slot in the grid with a Call to Action if odd number */}

@@ -42,11 +42,16 @@
 }
 
 .dark {
-  --background: #030712; /* Very dark blue/black */
-  --foreground: #f8fafc; /* Slate 50 */
-  --primary: #37A674; /* Verde Fonseca */
-  --primary-foreground: #020617; /* Slate 950 */
-  --accent: #1e293b; /* Slate 800 */
+  --background: #030712;
+  /* Very dark blue/black */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+  --primary: #37A674;
+  /* Verde Fonseca */
+  --primary-foreground: #020617;
+  /* Slate 950 */
+  --accent: #1e293b;
+  /* Slate 800 */
   --accent-foreground: #f8fafc;
   --border: rgba(255, 255, 255, 0.1);
   --ring: #37A674;
@@ -57,9 +62,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
@@ -69,9 +76,11 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#37A674] via-[#2A7F59] to-[#37A674];
   }
+
   .bg-gradient-premium {
     @apply bg-gradient-to-br from-[#37A674] via-[#2A7F59] to-[#000000];
   }
+
   .noise-overlay {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
     pointer-events: none;
@@ -82,6 +91,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(calc(-100% - var(--gap)));
   }
@@ -91,19 +101,63 @@
   from {
     transform: translateY(0);
   }
+
   to {
     transform: translateY(calc(-100% - var(--gap)));
   }
 }
 
 @keyframes grid-movement {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-40px, -40px); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-40px, -40px);
+  }
 }
 
 @layer utilities {
   .animate-grid-movement {
     animation: grid-movement 2.5s linear infinite;
     will-change: transform;
+  }
+}
+
+@keyframes float-opacity {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translate3d(20px, -10px, 0);
+  }
+}
+
+@keyframes pulse-opacity {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+@layer utilities {
+  .animate-float-slow {
+    animation: float-opacity 12s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-opacity 8s ease-in-out infinite;
   }
 }
